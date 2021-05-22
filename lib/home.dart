@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:universe/fadeAnimation.dart';
 
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -70,7 +69,53 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    
+                    FadeAnimation(
+                      fadeDirection: FadeDirection.left,
+                      delay: 1,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Welcome',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 6),
+                          ],
+                        ),
+                      ),
+                    ),
+                    FadeAnimation(
+                      fadeDirection: FadeDirection.top,
+                      delay: 1,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Disocver the world outside you',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white.withOpacity(0.4),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 6),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               )
