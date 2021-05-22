@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:universe/fadeAnimation.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -12,16 +13,14 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    double paddingLeft = ScreenUtil().setWidth(24);
-
     return Material(
       child: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            radius: 1.0,
+            radius: 1.5,
             colors: [
-              Colors.orange,
               Colors.deepPurple,
+              Colors.redAccent,
             ],
           ),
         ),
@@ -34,8 +33,44 @@ class _HomeState extends State<Home> {
                   physics: BouncingScrollPhysics(),
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: paddingLeft),
-                    )
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 29,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Icon(
+                            Icons.subject,
+                            size: 35,
+                            color: Colors.white,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              print('About me Button Presses');
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Container(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.red),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'About',
+                                    style: TextStyle(
+                                        fontSize: 25, color: Colors.amber),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
                   ],
                 ),
               )
