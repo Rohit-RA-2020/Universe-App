@@ -152,7 +152,9 @@ class _HomeState extends State<Home> {
                                   listCategory[index],
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
-                                      fontSize: 15, color: Colors.yellow),
+                                    fontSize: 15,
+                                    color: Colors.yellow,
+                                  ),
                                 ),
                               ),
                             ));
