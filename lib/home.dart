@@ -9,6 +9,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<String> listCategory = ["All", "Solar System", "Dark Energy"];
   int activeClassIndex = 0;
+  int itemCount;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class _HomeState extends State<Home> {
                     ),
                     FadeAnimation(
                       fadeDirection: FadeDirection.left,
-                      delay: 1,
+                      delay: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 24,
@@ -95,7 +96,7 @@ class _HomeState extends State<Home> {
                     ),
                     FadeAnimation(
                       fadeDirection: FadeDirection.top,
-                      delay: 1,
+                      delay: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 24,
@@ -113,6 +114,49 @@ class _HomeState extends State<Home> {
                             ),
                             SizedBox(height: 6),
                           ],
+                        ),
+                      ),
+                    ),
+                    FadeAnimation(
+                      fadeDirection: FadeDirection.right,
+                      delay: 1.5,
+                      child: Container(
+                        height: 108,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: listCategory.length,
+                          itemBuilder: (context, index) {
+                            return Center(
+                                child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  activeClassIndex = index;
+                                  itemCount =
+                                      listCategory[activeClassIndex].length;
+                                });
+                              },
+                              child: AnimatedContainer(
+                                duration: Duration(milliseconds: 500),
+                                margin:
+                                    EdgeInsets.only(left: index == 0 ? 24 : 0),
+                                height: 31,
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: index == activeClassIndex
+                                        ? Colors.black
+                                        : Colors.transparent,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(25))),
+                                child: Text(
+                                  listCategory[index],
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.yellow),
+                                ),
+                              ),
+                            ));
+                          },
                         ),
                       ),
                     )
