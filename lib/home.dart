@@ -189,12 +189,14 @@ class _HomeState extends State<Home> {
                       physics: ClampingScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
+                        final celestial = CelestialModel.items[index];
                         String heroTag = "humingbird" + index.toString();
                         return FadeAnimation(
                           fadeDirection: FadeDirection.right,
                           delay: 2 + index / 5,
                           child: CelestialCard(
                             heroTag: heroTag,
+                            name: celestial.name,
                           ),
                         );
                       },
@@ -212,14 +214,18 @@ class _HomeState extends State<Home> {
 
 class CelestialCard extends StatefulWidget {
   final String heroTag;
+  final String name;
 
-  const CelestialCard({Key key, this.heroTag}) : super(key: key);
+  const CelestialCard({Key key, this.heroTag, this.name}) : super(key: key);
 
   @override
-  _CelestialCardState createState() => _CelestialCardState();
+  _CelestialCardState createState() => _CelestialCardState(name);
 }
 
 class _CelestialCardState extends State<CelestialCard> {
+  final String name;
+
+  _CelestialCardState(this.name);
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -253,8 +259,9 @@ class _CelestialCardState extends State<CelestialCard> {
                   child: Stack(
                     children: <Widget>[
                       ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          child: Center(child: Text('Hello')))
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        child: Text(name),
+                      )
                     ],
                   ),
                 ),
