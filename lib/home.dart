@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:universe/fadeAnimation.dart';
 import 'dart:convert';
 import 'package:universe/models/itemsModel.dart';
+import 'package:universe/pages/celestialCard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -126,7 +127,7 @@ class _HomeState extends State<Home> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Disocver the world outside you',
+                              'Discover the world outside you',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                   fontSize: 15,
@@ -197,73 +198,14 @@ class _HomeState extends State<Home> {
                           child: CelestialCard(
                             heroTag: heroTag,
                             name: celestial.name,
+                            img: celestial.imag,
+                            tagline: celestial.tagline,
+                            map: celestial.map,
                           ),
                         );
                       },
                     )
                   ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CelestialCard extends StatefulWidget {
-  final String heroTag;
-  final String name;
-
-  const CelestialCard({Key key, this.heroTag, this.name}) : super(key: key);
-
-  @override
-  _CelestialCardState createState() => _CelestialCardState(name);
-}
-
-class _CelestialCardState extends State<CelestialCard> {
-  final String name;
-
-  _CelestialCardState(this.name);
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-        onTap: () {},
-        child: Container(
-          height: 210,
-          width: 327,
-          margin: EdgeInsets.only(bottom: 20),
-          decoration: BoxDecoration(
-              color: Color(0xFF525145),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  offset: Offset(5, 5),
-                  blurRadius: 7,
-                )
-              ],
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          child: Stack(
-            children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  height: 210,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF525145),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Text(name),
-                      )
-                    ],
-                  ),
                 ),
               )
             ],
