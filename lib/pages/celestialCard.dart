@@ -109,12 +109,15 @@ class _CelestialCardState extends State<CelestialCard> {
               ),
               Positioned(
                 left: 150,
-                child: Image.asset(
-                  img,
-                  alignment: Alignment.center,
-                  fit: BoxFit.fitHeight,
-                  height: 180,
-                  width: 180,
+                child: Hero(
+                  tag: widget.name,
+                  child: Image.asset(
+                    img,
+                    alignment: Alignment.center,
+                    fit: BoxFit.fitHeight,
+                    height: 180,
+                    width: 180,
+                  ),
                 ),
               )
             ],

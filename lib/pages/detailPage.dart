@@ -14,15 +14,11 @@ class DetailPage extends StatefulWidget {
   final String img;
 
   @override
-  _DetailPageState createState() => _DetailPageState(desc, name, img);
+  _DetailPageState createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
-  final String desc;
-  final String name;
-  final String img;
-
-  _DetailPageState(this.desc, this.name, this.img);
+  _DetailPageState();
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -34,8 +30,8 @@ class _DetailPageState extends State<DetailPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xff4A423F),
-                  Color(0xff9D8B8B),
+                  Colors.deepPurple,
+                  Colors.redAccent,
                 ],
               ),
             ),
@@ -54,43 +50,8 @@ class _DetailPageState extends State<DetailPage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xFF3D3730),
-                      Color(0xFF837576),
-                    ],
-                  ),
-                ),
-                child: SafeArea(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(
-                          top: 29,
-                        ),
-                        height: 31,
-                        width: 100,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(25))),
-                        child: TextButton(
-                          child: Text(
-                            'Go Back',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
+                      Colors.red,
+                      Colors.blue,
                     ],
                   ),
                 ),
@@ -123,7 +84,7 @@ class _DetailPageState extends State<DetailPage> {
                         width: 5,
                       ),
                       Text(
-                        name,
+                        widget.name,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -138,7 +99,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 24),
                     child: Text(
-                      desc,
+                      widget.desc,
                       style: TextStyle(
                         fontSize: 13,
                         color: Colors.white,
@@ -153,24 +114,28 @@ class _DetailPageState extends State<DetailPage> {
                   fadeDirection: FadeDirection.top,
                   delay: 1.2,
                   child: Container(
-                    margin: EdgeInsets.only(
-                      bottom: 29,
-                    ),
-                    height: 60,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.all(Radius.circular(15))),
-                    child: Text(
-                      'Donate',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
+                      margin: EdgeInsets.only(
+                        bottom: 29,
                       ),
-                    ),
-                  ),
+                      height: 60,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'Go Back',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )),
                 ),
               ],
             ),
@@ -180,9 +145,9 @@ class _DetailPageState extends State<DetailPage> {
             left: 140,
             height: 812,
             child: Hero(
-              tag: 'Earth',
+              tag: widget.name,
               child: Image.asset(
-                img,
+                widget.img,
               ),
             ),
           )
