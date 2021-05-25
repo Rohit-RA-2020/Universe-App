@@ -43,6 +43,8 @@ class _CelestialCardState extends State<CelestialCard> {
             MaterialPageRoute(
               builder: (context) => DetailPage(
                 desc: desc,
+                name: name,
+                img: img,
               ),
             ),
           );
