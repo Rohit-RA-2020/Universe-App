@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:universe/fadeAnimation.dart';
+import 'package:universe/models/fadeAnimation.dart';
 import 'dart:convert';
 import 'package:universe/models/itemsModel.dart';
 import 'package:universe/pages/celestialCard.dart';

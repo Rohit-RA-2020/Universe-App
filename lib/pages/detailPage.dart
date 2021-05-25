@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:universe/fadeAnimation.dart';
+import 'package:universe/models/fadeAnimation.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({
