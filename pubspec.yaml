@@ -51,6 +51,8 @@ flutter:
     - assets/files/cosmos.json
     - assets/images/earth.jpg
     - assets/images/
+    - assets/flare_files/earth.flr
+    - assets/flare_files/earth_loading.flr
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

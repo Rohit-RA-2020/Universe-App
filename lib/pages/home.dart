@@ -191,12 +191,10 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         final celestial = CelestialModel.items[index];
-                        String heroTag = "humingbird" + index.toString();
                         return FadeAnimation(
                           fadeDirection: FadeDirection.right,
                           delay: 2 + index / 5,
                           child: CelestialCard(
-                            heroTag: heroTag,
                             name: celestial.name,
                             img: celestial.imag,
                             tagline: celestial.tagline,

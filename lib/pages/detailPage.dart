@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:universe/models/fadeAnimation.dart';
 
@@ -146,8 +147,11 @@ class _DetailPageState extends State<DetailPage> {
             height: 812,
             child: Hero(
               tag: widget.name,
-              child: Image.asset(
+              child: FlareActor(
                 widget.img,
+                animation: "Preview2",
+                alignment: Alignment.centerRight,
+                fit: BoxFit.contain,
               ),
             ),
           )

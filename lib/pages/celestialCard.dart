@@ -1,9 +1,9 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:universe/pages/detailPage.dart';
 
 class CelestialCard extends StatefulWidget {
-  final String heroTag;
   final String name;
   final String img;
   final String map;
@@ -12,7 +12,6 @@ class CelestialCard extends StatefulWidget {
 
   const CelestialCard({
     Key key,
-    this.heroTag,
     this.name,
     this.img,
     this.map,
@@ -21,18 +20,11 @@ class CelestialCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CelestialCardState createState() =>
-      _CelestialCardState(name, img, map, tagline, desc);
+  _CelestialCardState createState() => _CelestialCardState();
 }
 
 class _CelestialCardState extends State<CelestialCard> {
-  final String name;
-  final String img;
-  final String map;
-  final String tagline;
-  final String desc;
-
-  _CelestialCardState(this.name, this.img, this.map, this.tagline, this.desc);
+  _CelestialCardState();
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -42,9 +34,9 @@ class _CelestialCardState extends State<CelestialCard> {
             context,
             MaterialPageRoute(
               builder: (context) => DetailPage(
-                desc: desc,
-                name: name,
-                img: img,
+                desc: widget.desc,
+                name: widget.name,
+                img: widget.img,
               ),
             ),
           );
@@ -54,7 +46,7 @@ class _CelestialCardState extends State<CelestialCard> {
           width: 327,
           margin: EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
-              color: Color(0xFF525145),
+              color: Colors.orangeAccent.shade400,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.5),
@@ -71,18 +63,16 @@ class _CelestialCardState extends State<CelestialCard> {
                   height: 210,
                   width: 150,
                   decoration: BoxDecoration(
-                    color: Color(0xFF525145),
+                    color: Colors.pink[200],
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                   child: Stack(
                     children: <Widget>[
                       ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Image.asset(
-                          map,
-                          height: 210,
-                          width: 150,
-                          fit: BoxFit.cover,
+                        child: FlareActor(
+                          widget.map,
+                          animation: "solar_run",
                         ),
                       ),
                       Align(
@@ -91,10 +81,10 @@ class _CelestialCardState extends State<CelestialCard> {
                           padding: EdgeInsets.only(
                             left: 16,
                             right: 16,
-                            bottom: 18,
+                            bottom: 5,
                           ),
                           child: Text(
-                            tagline,
+                            widget.tagline,
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -108,15 +98,13 @@ class _CelestialCardState extends State<CelestialCard> {
                 ),
               ),
               Positioned(
-                left: 150,
                 child: Hero(
                   tag: widget.name,
-                  child: Image.asset(
-                    img,
-                    alignment: Alignment.center,
+                  child: FlareActor(
+                    widget.img,
+                    animation: "Preview2",
+                    alignment: Alignment.centerRight,
                     fit: BoxFit.fitHeight,
-                    height: 180,
-                    width: 180,
                   ),
                 ),
               )
