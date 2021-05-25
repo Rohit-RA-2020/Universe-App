@@ -201,6 +201,7 @@ class _HomeState extends State<Home> {
                             img: celestial.imag,
                             tagline: celestial.tagline,
                             map: celestial.map,
+                            desc: celestial.desc,
                           ),
                         );
                       },

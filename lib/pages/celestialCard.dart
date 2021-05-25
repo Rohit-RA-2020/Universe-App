@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:universe/pages/detailPage.dart';
 
 class CelestialCard extends StatefulWidget {
   final String heroTag;
@@ -7,14 +8,21 @@ class CelestialCard extends StatefulWidget {
   final String img;
   final String map;
   final String tagline;
+  final String desc;
 
-  const CelestialCard(
-      {Key key, this.heroTag, this.name, this.img, this.map, this.tagline})
-      : super(key: key);
+  const CelestialCard({
+    Key key,
+    this.heroTag,
+    this.name,
+    this.img,
+    this.map,
+    this.tagline,
+    this.desc,
+  }) : super(key: key);
 
   @override
   _CelestialCardState createState() =>
-      _CelestialCardState(name, img, map, tagline);
+      _CelestialCardState(name, img, map, tagline, desc);
 }
 
 class _CelestialCardState extends State<CelestialCard> {
@@ -22,13 +30,23 @@ class _CelestialCardState extends State<CelestialCard> {
   final String img;
   final String map;
   final String tagline;
+  final String desc;
 
-  _CelestialCardState(this.name, this.img, this.map, this.tagline);
+  _CelestialCardState(this.name, this.img, this.map, this.tagline, this.desc);
   @override
   Widget build(BuildContext context) {
     return Center(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage(
+                desc: desc,
+              ),
+            ),
+          );
+        },
         child: Container(
           height: 210,
           width: 327,
