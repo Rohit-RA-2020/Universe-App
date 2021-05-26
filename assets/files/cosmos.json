@@ -12,7 +12,7 @@
             "index":1,
             "name": "Venus",
             "map": "assets/images/solar.jpg",
-            "imag": "assets/images/venus.jpg",
+            "imag": "assets/flare_files/venus.flr",
             "tagline":"The most shinner in the night sky",
             "desc":"Venus Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
@@ -28,7 +28,7 @@
             "index":3,
             "name": "Mars",
             "map": "assets/images/solar.jpg",
-            "imag": "assets/images/mars.jpg",
+            "imag": "assets/flare_files/mars.flr",
             "tagline":"I have some new friends",
             "desc":"Mars Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },

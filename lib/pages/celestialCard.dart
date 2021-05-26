@@ -46,7 +46,7 @@ class _CelestialCardState extends State<CelestialCard> {
           width: 327,
           margin: EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
-              color: Colors.orangeAccent.shade400,
+              color: Colors.pink,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.5),
@@ -61,9 +61,9 @@ class _CelestialCardState extends State<CelestialCard> {
                 alignment: Alignment.centerLeft,
                 child: Container(
                   height: 210,
-                  width: 150,
+                  width: 140,
                   decoration: BoxDecoration(
-                    color: Colors.pink[200],
+                    color: Colors.pink[100],
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                   child: Stack(
@@ -76,10 +76,10 @@ class _CelestialCardState extends State<CelestialCard> {
                         ),
                       ),
                       Align(
-                        alignment: Alignment.bottomLeft,
+                        alignment: Alignment.bottomCenter,
                         child: Padding(
                           padding: EdgeInsets.only(
-                            left: 16,
+                            left: 25,
                             right: 16,
                             bottom: 5,
                           ),
@@ -88,7 +88,7 @@ class _CelestialCardState extends State<CelestialCard> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.deepOrange.shade900,
                             ),
                           ),
                         ),
@@ -97,17 +97,15 @@ class _CelestialCardState extends State<CelestialCard> {
                   ),
                 ),
               ),
-              Positioned(
-                child: Hero(
-                  tag: widget.name,
-                  child: FlareActor(
-                    widget.img,
-                    animation: "Preview2",
-                    alignment: Alignment.centerRight,
-                    fit: BoxFit.fitHeight,
-                  ),
+              Hero(
+                tag: widget.name,
+                child: FlareActor(
+                  widget.img,
+                  animation: "Preview2",
+                  alignment: Alignment.centerRight,
+                  fit: BoxFit.fitHeight,
                 ),
-              )
+              ),
             ],
           ),
         ),

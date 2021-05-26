@@ -105,7 +105,7 @@ class _DetailPageState extends State<DetailPage> {
                         fontSize: 13,
                         color: Colors.white,
                       ),
-                      maxLines: 10,
+                      maxLines: 20,
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
                     ),
