@@ -4,7 +4,7 @@
             "index":0,
             "name": "Mercury",
             "map": "assets/images/solar.jpg",
-            "imag": "assets/images/mercury.jpg",
+            "imag": "assets/flare_files/mercury.flr",
             "tagline":"I would have been the hottest",
             "desc":"Mercury Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
@@ -34,6 +34,14 @@
         },
         {
             "index":4,
+            "name": "Meteorites",
+            "map": "assets/images/solar.jpg",
+            "imag": "assets/flare_files/meteroite.flr",
+            "tagline":"UnWanted Guests",
+            "desc":"Meteroite Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+        },
+        {
+            "index":5,
             "name": "Jupyter",
             "map": "assets/images/solar.jpg",
             "imag": "assets/images/jupyter.jpg",
@@ -41,7 +49,7 @@
             "desc":"Jupyter Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
         {
-            "index":5,
+            "index":6,
             "name": "Saturn",
             "map": "assets/images/solar.jpg",
             "imag": "assets/images/saturn.png",
@@ -49,7 +57,7 @@
             "desc":"Saturn Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
         {
-            "index":6,
+            "index":7,
             "name": "Uranus",
             "map": "assets/images/solar.jpg",
             "imag": "assets/images/uranus.jpg",
@@ -57,7 +65,7 @@
             "desc":"Uranus Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
         {
-            "index":7,
+            "index":8,
             "name": "Neptune",
             "map": "assets/images/solar.jpg",
             "imag": "assets/images/neptune.jpg",
