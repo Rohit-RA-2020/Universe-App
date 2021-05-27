@@ -1,6 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:universe/models/fadeAnimation.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({
@@ -86,10 +87,10 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                       Text(
                         widget.name,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700),
+                        style: GoogleFonts.permanentMarker(
+                          fontSize: 40,
+                          color: Colors.pink.shade100,
+                        ),
                       )
                     ],
                   ),
@@ -101,9 +102,10 @@ class _DetailPageState extends State<DetailPage> {
                     padding: EdgeInsets.symmetric(vertical: 24),
                     child: Text(
                       widget.desc,
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.white,
+                      style: GoogleFonts.caveat(
+                        color: Colors.yellowAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                       maxLines: 20,
                       overflow: TextOverflow.ellipsis,

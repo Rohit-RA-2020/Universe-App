@@ -42,7 +42,7 @@
         },
         {
             "index":5,
-            "name": "Meteorites",
+            "name": "Asteroid",
             "map": "assets/flare_files/mete_loading.flr",
             "imag": "assets/flare_files/meteroite.flr",
             "tagline":"UnWanted Guests",
