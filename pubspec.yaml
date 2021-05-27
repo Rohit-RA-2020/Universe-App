@@ -33,8 +33,14 @@ dependencies:
   google_fonts: ^2.1.0
 
 dev_dependencies:
+  flutter_native_splash: ^1.1.8+4
   flutter_test:
     sdk: flutter
+  
+flutter_native_splash:
+  color: "#242122"
+  image: assets/splash.png
+  android: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
