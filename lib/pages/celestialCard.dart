@@ -103,7 +103,7 @@ class _CelestialCardState extends State<CelestialCard> {
                   widget.img,
                   animation: "Preview2",
                   alignment: Alignment.centerRight,
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             ],
