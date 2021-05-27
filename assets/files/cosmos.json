@@ -3,7 +3,7 @@
         {
             "index":0,
             "name": "Sun",
-            "map": "assets/images/solar.jpg",
+            "map": "assets/flare_files/sun_loading.flr",
             "imag": "assets/flare_files/sun.flr",
             "tagline":"Too big in it's area",
             "desc":"Sun Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
@@ -43,7 +43,7 @@
         {
             "index":5,
             "name": "Meteorites",
-            "map": "assets/images/solar.jpg",
+            "map": "assets/flare_files/mete_loading.flr",
             "imag": "assets/flare_files/meteroite.flr",
             "tagline":"UnWanted Guests",
             "desc":"Meteroite Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
@@ -68,7 +68,7 @@
             "index":8,
             "name": "Uranus",
             "map": "assets/flare_files/uranus_loading.flr",
-            "imag": "assets/images/uranus.jpg",
+            "imag": "assets/flare_files/uranus.flr",
             "tagline":"Yay! Diamond Rains here",
             "desc":"Uranus Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
         },
