@@ -1,6 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:universe/pages/detailPage.dart';
 
 class CelestialCard extends StatefulWidget {
@@ -79,17 +80,13 @@ class _CelestialCardState extends State<CelestialCard> {
                         alignment: Alignment.bottomCenter,
                         child: Padding(
                           padding: EdgeInsets.only(
-                            left: 25,
-                            right: 16,
-                            bottom: 5,
+                            left: 35,
+                            right: 3,
+                            bottom: 3,
                           ),
                           child: Text(
                             widget.tagline,
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange.shade900,
-                            ),
+                            style: GoogleFonts.montserratAlternates(),
                           ),
                         ),
                       ),

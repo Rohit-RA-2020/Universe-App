@@ -6,15 +6,15 @@
             "map": "assets/flare_files/sun_loading.flr",
             "imag": "assets/flare_files/sun.flr",
             "tagline":"Too big in it's area",
-            "desc":"Sun Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "desc":"The Sun is a yellow dwarf star at the center of our Solar System. All the planets of the Solar System orbit around the Sun. The Sun and the Solar System orbit around the center of our Galaxy, the Milky Way. Although the Sun is a relatively small star in the universe, it is huge in relation to our solar system. Even with massive gas planets like Jupiter and Saturn, the Sun contains 99.8% of all the mass in the solar system. The Sun is made up of superheated hydrogen and helium gas. Hydrogen makes up about 74% of the mass of the Sun."
         },
         {
             "index":1,
             "name": "Mercury",
             "map": "assets/flare_files/mercury_loading.flr",
             "imag": "assets/flare_files/mercury.flr",
-            "tagline":"I would have been the hottest",
-            "desc":"Mercury Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"Closest yet smallest",
+            "desc":"Mercury is the closest planet to the sun, and it is also the smallest planet in the solar system, only slightly larger than Earth's moon. Mercury has no atmosphere to protect it from the sun's relentless radiation and daytime surface temperatures can reach highs of 800 degrees Fahrenheit (430 degrees Celsius) before plummeting as low as minus 290 F (minus 180 C) at night. Mercury was named after the Roman messenger of the gods because of its speedy rotation around the sun. This small planet has no moons."
         },
         {
             "index":2,
@@ -22,7 +22,7 @@
             "map": "assets/flare_files/venus_loading.flr",
             "imag": "assets/flare_files/venus.flr",
             "tagline":"The most shinner in the night sky",
-            "desc":"Venus Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "desc":"Named after the Roman goddess of love, Venus is the hottest planet in our solar system. Its atmosphere is a thick layer of mostly carbon dioxide gas that traps heat, allowing the planet's surface temperatures to reach a scorching 880 F (471 C). Venus is slightly smaller than Earth, and, like Earth’s outer core, it also has a core of molten iron. Almost all the surface features of Venus are named for noteworthy Earth women — both mythological and real"
         },
         {
             "index":3,
@@ -37,8 +37,8 @@
             "name": "Mars",
             "map": "assets/flare_files/mars_loading.flr",
             "imag": "assets/flare_files/mars.flr",
-            "tagline":"I have some new friends",
-            "desc":"Mars Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"Imagination will let us live there.",
+            "desc":"Mars is known as the Red Planet, due to the iron-rich dust that covers its surface and gives the planet a rusty color. This red color led the ancient Romans to name Mars after their god of war. The Red Planet is also home to the largest volcano in the solar system, Olympus Mons. The planet has a thin atmosphere and without a thick protective shield, temperatures on Mars average around minus 80 F (minus 60 C). This makes it unlikely that liquid water — and thus life as we know it — could exist on the Martian surface, although scientists think that it once might have."
         },
         {
             "index":5,
@@ -46,39 +46,39 @@
             "map": "assets/flare_files/mete_loading.flr",
             "imag": "assets/flare_files/meteroite.flr",
             "tagline":"UnWanted Guests",
-            "desc":"Meteroite Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "desc":"An asteroid is a chunk of rock and metal in outer space that is in orbit around the Sun. Asteroids vary in size from just a few feet across to hundreds of miles in diameter. Most asteroids are not round, but are lumpy and shaped like a potato. As they orbit the Sun, they tumble and spin. The majority of asteroids orbit the Sun in a ring called the asteroid belt. The asteroid belt is located between the planets Mars and Jupiter. You can think of it as a belt between the rocky planets and the gas planets. There are millions and millions of asteroids in the asteroid belt."        
         },
         {
             "index":6,
             "name": "Jupyter",
             "map": "assets/flare_files/jupyter_loading.flr",
             "imag": "assets/flare_files/jupyter.flr",
-            "tagline":"Much bigger than the scooter one",
-            "desc":"Jupyter Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"The wanna be star!",
+            "desc":"Jupiter is the largest planet in the Solar System and is the fifth planet from the sun. It is more than 300 times more massive than Earth and is more than two times as massive than all the other planets combined. Jupiter is called a gas giant planet. This is because its surface is made up of a thick layer of hydrogen gas. Deep within the planet, under the gas, the pressure becomes so intense that the hydrogen turns into liquid and then finally into a metal. Under the Hydrogen is a rocky core that is about the size of planet Earth."
         },
         {
             "index":7,
             "name": "Saturn",
             "map": "assets/flare_files/saturn_loading.flr",
             "imag": "assets/flare_files/saturn.flr",
-            "tagline":"You can glide on my rings",
-            "desc":"Saturn Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"The only visually unique planet",
+            "desc":"Saturn is the second largest planet in the solar system after Jupiter. It is only slightly smaller than Jupiter in diameter, but is much smaller in mass. Saturn is made up of mostly hydrogen with some helium. The surface of Saturn is gaseous, but as you go deeper the hydrogen becomes liquid and then becomes metal. Saturn's center is a hard rocky core. Overall, Saturn is the least dense planet in the solar system. It is the only planet that is less dense than water, meaning it would actually float on a (huge) ocean of water."
         },
         {
             "index":8,
             "name": "Uranus",
             "map": "assets/flare_files/uranus_loading.flr",
             "imag": "assets/flare_files/uranus.flr",
-            "tagline":"Yay! Diamond Rains here",
-            "desc":"Uranus Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"A bit lonely!",
+            "desc":"Uranus is the 7th planet from the Sun. It is more than twice as far from the Sun as Saturn. Uranus is an ice giant like its sister planet Neptune. Although it has a gas surface, like the gas giants Jupiter and Saturn, much of the interior of the planet is made up of frozen elements. As a result, Uranus has the coldest atmosphere of all the planets in the Solar System. The surface of Uranus is made up of mostly hydrogen gas with some helium gas as well."
         },
         {
             "index":9,
             "name": "Neptune",
             "map": "assets/flare_files/neptune_loading.flr",
             "imag": "assets/flare_files/neptune.flr",
-            "tagline":"The most Lonliest",
-            "desc":"Neptune Sadipscing sit erat takimata voluptua sit eirmod, ipsum erat takimata justo clita accusam dolore magna. Sit sanctus lorem accusam sadipscing accusam diam ipsum, et sit consetetur et duo. Kasd diam."
+            "tagline":"Yay! It Rains Diamonds here",
+            "desc":"Neptune is the eighth and furthest planet from the sun. Neptune's atmosphere gives it a blue color which is fitting with it being named after the Roman god of the sea. Neptune is an ice giant planet. This means it has a gas surface like the gas giant planets, but it has an interior composed mostly of ices and rock. Neptune is slightly smaller than its sister planet Uranus making it the 4th largest planet. However, Neptune is a little bit larger in mass than Uranus making it the 3rd largest planet by mass."
         }
         
     ]

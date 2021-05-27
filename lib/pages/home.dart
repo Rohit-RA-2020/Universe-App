@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:universe/models/fadeAnimation.dart';
 import 'dart:convert';
 import 'package:universe/models/itemsModel.dart';
+import 'package:universe/pages/about.dart';
 import 'package:universe/pages/celestialCard.dart';
 
 class Home extends StatefulWidget {
@@ -69,7 +71,12 @@ class _HomeState extends State<Home> {
                           ),
                           InkWell(
                             onTap: () {
-                              print('About me Button Presses');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => About(),
+                                ),
+                              );
                             },
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20.0),
@@ -77,13 +84,19 @@ class _HomeState extends State<Home> {
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.red),
+                                  border: Border.all(
+                                    color: Colors.red,
+                                    width: 3,
+                                  ),
                                 ),
                                 child: Center(
                                   child: Text(
                                     'About',
-                                    style: TextStyle(
-                                        fontSize: 25, color: Colors.amber),
+                                    style: GoogleFonts.pacifico(
+                                      fontSize: 30,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
