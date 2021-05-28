@@ -46,7 +46,7 @@ class _CelestialCardState extends State<CelestialCard> {
           padding: const EdgeInsets.only(right: 10.0, left: 10.0),
           child: Container(
             height: 210,
-            width: MediaQuery.of(context).size.width,
+            width: 356,
             margin: EdgeInsets.only(bottom: 20),
             decoration: BoxDecoration(
                 color: Colors.pink,

@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
 
   List<Item> _data = List<Item>();
   List<Item> _dataForDisplay = List<Item>();
+  bool _folded = true;
 
   Future<String> loadNoteAsset() async {
     return await rootBundle.loadString('assets/files/cosmos.json');
@@ -162,71 +163,35 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    FadeAnimation(
-                      fadeDirection: FadeDirection.right,
-                      delay: 1.5,
-                      child: Container(
-                        height: 108,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: listCategory.length,
-                          itemBuilder: (context, index) {
-                            return Center(
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    activeClassIndex = index;
-                                    itemCount =
-                                        listCategory[activeClassIndex].length;
-                                  });
-                                },
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 500),
-                                  margin: EdgeInsets.only(
-                                      left: index == 0 ? 24 : 0),
-                                  height: 31,
-                                  padding: EdgeInsets.symmetric(horizontal: 20),
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      color: index == activeClassIndex
-                                          ? Colors.black
-                                          : Colors.transparent,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(25))),
-                                  child: Text(
-                                    listCategory[index],
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.yellow,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: FadeAnimation(
+                        child: _animatedSearchBox(),
+                        delay: 1,
+                        fadeDirection: FadeDirection.top,
                       ),
                     ),
-                    _searchBar(),
-                    ListView.builder(
-                      itemCount: _dataForDisplay.length,
-                      physics: ClampingScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return FadeAnimation(
-                          fadeDirection: FadeDirection.right,
-                          delay: 2 + index / 5,
-                          child: CelestialCard(
-                            name: _dataForDisplay[index].name,
-                            img: _dataForDisplay[index].imag,
-                            tagline: _dataForDisplay[index].tagline,
-                            map: _dataForDisplay[index].map,
-                            desc: _dataForDisplay[index].desc,
-                          ),
-                        );
-                      },
-                    )
+                    SizedBox(height: 20),
+                    _dataForDisplay != null && _dataForDisplay.isNotEmpty
+                        ? ListView.builder(
+                            itemCount: _dataForDisplay.length,
+                            physics: ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return FadeAnimation(
+                                fadeDirection: FadeDirection.right,
+                                delay: 2 + index / 5,
+                                child: CelestialCard(
+                                  name: _dataForDisplay[index].name,
+                                  img: _dataForDisplay[index].imag,
+                                  tagline: _dataForDisplay[index].tagline,
+                                  map: _dataForDisplay[index].map,
+                                  desc: _dataForDisplay[index].desc,
+                                ),
+                              );
+                            },
+                          )
+                        : Center(child: Text('Adding this data soon 🤗 Stay Tunned')),
                   ],
                 ),
               )
@@ -237,22 +202,71 @@ class _HomeState extends State<Home> {
     );
   }
 
-  _searchBar() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: 'Search.....',
-        ),
-        onChanged: (text) {
-          text = text.toLowerCase();
-          setState(() {
-            _dataForDisplay = _data.where((data) {
-              var dataTitle = data.name.toLowerCase();
-              return dataTitle.contains(text);
-            }).toList();
-          });
-        },
+  _animatedSearchBox() {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 400),
+      width: _folded ? 100 : 56,
+      height: 56,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadiusDirectional.circular(32),
+        color: Colors.purple[200],
+        boxShadow: kElevationToShadow[6],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.only(left: 16.0),
+              child: !_folded
+                  ? TextField(
+                      onChanged: (text) {
+                        text = text.toLowerCase();
+                        setState(() {
+                          _dataForDisplay = _data.where((data) {
+                            var dataTitle = data.name.toLowerCase();
+                            return dataTitle.contains(text);
+                          }).toList();
+                        });
+                      },
+                      decoration: InputDecoration(
+                        hintText:
+                            _folded ? 'Press the Icon to Search' : 'Search',
+                        hintStyle: TextStyle(
+                          color: Colors.blue[900],
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    )
+                  : Text('Press the icon to Search'),
+            ),
+          ),
+          AnimatedContainer(
+            duration: Duration(microseconds: 400),
+            child: Material(
+              type: MaterialType.transparency,
+              child: InkWell(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(_folded ? 32 : 0),
+                  topRight: Radius.circular(32),
+                  bottomLeft: Radius.circular(_folded ? 32 : 0),
+                  bottomRight: Radius.circular(32),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Icon(
+                    _folded ? Icons.search : Icons.close,
+                    color: Colors.blue[900],
+                  ),
+                ),
+                onTap: () {
+                  setState(() {
+                    _folded = !_folded;
+                  });
+                },
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
