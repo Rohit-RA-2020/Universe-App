@@ -42,68 +42,71 @@ class _CelestialCardState extends State<CelestialCard> {
             ),
           );
         },
-        child: Container(
-          height: 210,
-          width: 327,
-          margin: EdgeInsets.only(bottom: 20),
-          decoration: BoxDecoration(
-              color: Colors.pink,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  offset: Offset(5, 5),
-                  blurRadius: 7,
-                )
+        child: Padding(
+          padding: const EdgeInsets.only(right: 10.0, left: 10.0),
+          child: Container(
+            height: 210,
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+                color: Colors.pink,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    offset: Offset(5, 5),
+                    blurRadius: 7,
+                  )
+                ],
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            child: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    height: 210,
+                    width: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.pink[100],
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          child: FlareActor(
+                            widget.map,
+                            animation: "solar_run",
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 35,
+                              right: 3,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              widget.tagline,
+                              style: GoogleFonts.montserratAlternates(),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Hero(
+                  tag: widget.name,
+                  child: FlareActor(
+                    widget.img,
+                    animation: "Preview2",
+                    alignment: Alignment.centerRight,
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
               ],
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          child: Stack(
-            children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  height: 210,
-                  width: 140,
-                  decoration: BoxDecoration(
-                    color: Colors.pink[100],
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: FlareActor(
-                          widget.map,
-                          animation: "solar_run",
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                            left: 35,
-                            right: 3,
-                            bottom: 3,
-                          ),
-                          child: Text(
-                            widget.tagline,
-                            style: GoogleFonts.montserratAlternates(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Hero(
-                tag: widget.name,
-                child: FlareActor(
-                  widget.img,
-                  animation: "Preview2",
-                  alignment: Alignment.centerRight,
-                  fit: BoxFit.scaleDown,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
