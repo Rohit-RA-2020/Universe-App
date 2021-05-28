@@ -15,24 +15,34 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<String> listCategory = ["All", "Solar System", "Dark Energy"];
   int activeClassIndex = 0;
-  int itemCount;
+  int itemCount = 0;
+
+  List<Item> _data = List<Item>();
+  List<Item> _dataForDisplay = List<Item>();
+
+  Future<String> loadNoteAsset() async {
+    return await rootBundle.loadString('assets/files/cosmos.json');
+  }
+
+  Future<List<Item>> parsePost() async {
+    var data = List<Item>();
+    String source = await loadNoteAsset();
+    final parsed = jsonDecode(source);
+    for (var item in parsed) {
+      data.add(Item.fromJson(item));
+    }
+    return data;
+  }
 
   @override
   void initState() {
+    parsePost().then((value) {
+      setState(() {
+        _data.addAll(value);
+        _dataForDisplay = _data;
+      });
+    });
     super.initState();
-
-    loadData();
-  }
-
-  loadData() async {
-    final cosmosJson = await rootBundle.loadString("assets/files/cosmos.json");
-    final decodedData = jsonDecode(cosmosJson);
-    var celestialData = decodedData["celestial"];
-    CelestialModel.items = List.from(celestialData)
-        .map<Item>((item) => Item.fromMap(item))
-        .toList();
-
-    setState(() {});
   }
 
   @override
@@ -198,21 +208,21 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+                    _searchBar(),
                     ListView.builder(
-                      itemCount: CelestialModel.items.length,
+                      itemCount: _dataForDisplay.length,
                       physics: ClampingScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        final celestial = CelestialModel.items[index];
                         return FadeAnimation(
                           fadeDirection: FadeDirection.right,
                           delay: 2 + index / 5,
                           child: CelestialCard(
-                            name: celestial.name,
-                            img: celestial.imag,
-                            tagline: celestial.tagline,
-                            map: celestial.map,
-                            desc: celestial.desc,
+                            name: _dataForDisplay[index].name,
+                            img: _dataForDisplay[index].imag,
+                            tagline: _dataForDisplay[index].tagline,
+                            map: _dataForDisplay[index].map,
+                            desc: _dataForDisplay[index].desc,
                           ),
                         );
                       },
@@ -223,6 +233,26 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  _searchBar() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: 'Search.....',
+        ),
+        onChanged: (text) {
+          text = text.toLowerCase();
+          setState(() {
+            _dataForDisplay = _data.where((data) {
+              var dataTitle = data.name.toLowerCase();
+              return dataTitle.contains(text);
+            }).toList();
+          });
+        },
       ),
     );
   }

@@ -1,16 +1,12 @@
 import 'dart:convert';
 
-class CelestialModel {
-  static List<Item> items = [];
-}
-
 class Item {
-  final int index;
-  final String name;
-  final String map;
-  final String imag;
-  final String tagline;
-  final String desc;
+  int index;
+  String name;
+  String map;
+  String imag;
+  String tagline;
+  String desc;
 
   Item({
     this.index,
@@ -32,6 +28,15 @@ class Item {
       tagline: map["tagline"],
       desc: map["desc"],
     );
+  }
+
+  Item.fromJson(Map<String, dynamic> json) {
+    index = json['index'];
+    name = json['name'];
+    map = json['map'];
+    imag = json['imag'];
+    tagline = json['tagline'];
+    desc = json['desc'];
   }
 
   Item copyWith({
@@ -65,7 +70,7 @@ class Item {
 
   String toJson() => json.encode(toMap());
 
-  factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
+  //factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
 
   @override
   String toString() {
