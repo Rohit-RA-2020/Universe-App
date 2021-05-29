@@ -117,28 +117,29 @@ class _DetailPageState extends State<DetailPage> {
                   fadeDirection: FadeDirection.top,
                   delay: 1.2,
                   child: Container(
-                      margin: EdgeInsets.only(
-                        bottom: 29,
-                      ),
-                      height: 60,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          'Go Back',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
+                    margin: EdgeInsets.only(
+                      bottom: 29,
+                    ),
+                    height: 60,
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        'Go Back',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.white,
                         ),
-                      )),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
