@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
   int activeClassIndex = 0;
   int itemCount = 0;
 
-  List<Item> _data = List<Item>();
-  List<Item> _dataForDisplay = List<Item>();
+  List<Item> _data = <Item>[];
+  List<Item> _dataForDisplay = <Item>[];
   bool _folded = true;
 
   Future<String> loadNoteAsset() async {
@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
   }
 
   Future<List<Item>> parsePost() async {
-    var data = List<Item>();
+    var data = <Item>[];
     String source = await loadNoteAsset();
     final parsed = jsonDecode(source);
     for (var item in parsed) {
@@ -191,7 +191,9 @@ class _HomeState extends State<Home> {
                               );
                             },
                           )
-                        : Center(child: Text('Adding this data soon 🤗 Stay Tunned')),
+                        : Center(
+                            child:
+                                Text('Adding this data soon 🤗 Stay Tunned')),
                   ],
                 ),
               )
