@@ -61,89 +61,90 @@ class _DetailPageState extends State<DetailPage> {
             ),
           ),
           SafeArea(
-              child: Container(
-            width: 245,
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: Container(),
-                ),
-                FadeAnimation(
-                  fadeDirection: FadeDirection.top,
-                  delay: 1.6,
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        width: 5,
-                        height: 5,
-                        decoration: BoxDecoration(
-                            color: Color(0xFFFDCD00), shape: BoxShape.circle),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        widget.name,
-                        style: GoogleFonts.permanentMarker(
-                          fontSize: 40,
-                          color: Colors.pink.shade100,
+            child: Container(
+              width: 245,
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(),
+                  ),
+                  FadeAnimation(
+                    fadeDirection: FadeDirection.top,
+                    delay: 1.6,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 5,
+                          height: 5,
+                          decoration: BoxDecoration(
+                              color: Color(0xFFFDCD00), shape: BoxShape.circle),
                         ),
-                      )
-                    ],
-                  ),
-                ),
-                FadeAnimation(
-                  fadeDirection: FadeDirection.top,
-                  delay: 1.4,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 24),
-                    child: Text(
-                      widget.desc,
-                      style: GoogleFonts.caveat(
-                        color: Colors.yellowAccent,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                      maxLines: 20,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: true,
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          widget.name,
+                          style: GoogleFonts.permanentMarker(
+                            fontSize: 40,
+                            color: Colors.pink.shade100,
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ),
-                FadeAnimation(
-                  fadeDirection: FadeDirection.top,
-                  delay: 1.2,
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      bottom: 29,
-                    ),
-                    height: 60,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.all(Radius.circular(15))),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+                  FadeAnimation(
+                    fadeDirection: FadeDirection.top,
+                    delay: 1.4,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 24),
                       child: Text(
-                        'Go Back',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
+                        widget.desc,
+                        style: GoogleFonts.caveat(
+                          color: Colors.yellowAccent,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        maxLines: 20,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
+                      ),
+                    ),
+                  ),
+                  FadeAnimation(
+                    fadeDirection: FadeDirection.top,
+                    delay: 1.2,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        bottom: 29,
+                      ),
+                      height: 60,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'Go Back',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )),
+          ),
           Positioned(
             right: -250,
             left: 140,
