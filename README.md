@@ -5,9 +5,9 @@ Explore the world outside you. Experience minimalistic design and animations.
 View various planets and other celestial bodies. Small and compact design.
 
 <p align="left">
-  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag1.png" width="300" title="App Image">
-  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag2.png" width="300" alt="App Image">
-  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag3.png" width="300" alt="App Image">
+  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag1.png" width="280" title="App Image">
+  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag2.png" width="280" alt="App Image">
+  <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag3.png" width="280" alt="App Image">
 </p>
 
 
