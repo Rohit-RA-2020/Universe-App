@@ -4,6 +4,8 @@
 Explore the world outside you. Experience minimalistic design and animations.
 View various planets and other celestial bodies. Small and compact design.
 
+[![Codemagic build status](https://api.codemagic.io/apps/60b3542bc00453cdc033745c/60b3542bc00453cdc033745b/status_badge.svg)](https://codemagic.io/apps/60b3542bc00453cdc033745c/60b3542bc00453cdc033745b/latest_build)
+
 <p align="left">
   <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag1.png" width="280" title="App Image">
   <img src="https://github.com/Rohit-RA-2020/Universe-App/blob/master/appImages/imag2.png" width="280" alt="App Image">
