@@ -5,15 +5,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({
-    Key key,
-    @required this.desc,
-    @required this.name,
-    @required this.img,
+    Key? key,
+    required this.desc,
+    required this.name,
+    required this.img,
   }) : super(key: key);
 
-  final String desc;
-  final String name;
-  final String img;
+  final String? desc;
+  final String? name;
+  final String? img;
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -86,7 +86,7 @@ class _DetailPageState extends State<DetailPage> {
                           width: 5,
                         ),
                         Text(
-                          widget.name,
+                          widget.name!,
                           style: GoogleFonts.permanentMarker(
                             fontSize: 40,
                             color: Colors.pink.shade100,
@@ -101,7 +101,7 @@ class _DetailPageState extends State<DetailPage> {
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 24),
                       child: Text(
-                        widget.desc,
+                        widget.desc!,
                         style: GoogleFonts.caveat(
                           color: Colors.yellowAccent,
                           fontWeight: FontWeight.bold,
@@ -150,7 +150,7 @@ class _DetailPageState extends State<DetailPage> {
             left: 140,
             height: 812,
             child: Hero(
-              tag: widget.name,
+              tag: widget.name!,
               child: FlareActor(
                 widget.img,
                 animation: "Preview2",

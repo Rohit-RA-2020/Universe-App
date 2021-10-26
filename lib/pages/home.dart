@@ -172,7 +172,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    _dataForDisplay != null && _dataForDisplay.isNotEmpty
+                    _dataForDisplay.isNotEmpty
                         ? ListView.builder(
                             itemCount: _dataForDisplay.length,
                             physics: ClampingScrollPhysics(),
@@ -225,7 +225,7 @@ class _HomeState extends State<Home> {
                         text = text.toLowerCase();
                         setState(() {
                           _dataForDisplay = _data.where((data) {
-                            var dataTitle = data.name.toLowerCase();
+                            var dataTitle = data.name!.toLowerCase();
                             return dataTitle.contains(text);
                           }).toList();
                         });

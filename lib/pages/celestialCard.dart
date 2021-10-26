@@ -5,14 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:universe/pages/detailPage.dart';
 
 class CelestialCard extends StatefulWidget {
-  final String name;
-  final String img;
-  final String map;
-  final String tagline;
-  final String desc;
+  final String? name;
+  final String? img;
+  final String? map;
+  final String? tagline;
+  final String? desc;
 
   const CelestialCard({
-    Key key,
+    Key? key,
     this.name,
     this.img,
     this.map,
@@ -87,7 +87,7 @@ class _CelestialCardState extends State<CelestialCard> {
                               bottom: 3,
                             ),
                             child: Text(
-                              widget.tagline,
+                              widget.tagline!,
                               style: GoogleFonts.montserratAlternates(),
                             ),
                           ),
@@ -97,7 +97,7 @@ class _CelestialCardState extends State<CelestialCard> {
                   ),
                 ),
                 Hero(
-                  tag: widget.name,
+                  tag: widget.name!,
                   child: FlareActor(
                     widget.img,
                     animation: "Preview2",

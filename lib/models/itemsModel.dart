@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 class Item {
-  int index;
-  String name;
-  String map;
-  String imag;
-  String tagline;
-  String desc;
+  int? index;
+  String? name;
+  String? map;
+  String? imag;
+  String? tagline;
+  String? desc;
 
   Item({
     this.index,
@@ -18,8 +18,6 @@ class Item {
   });
 
   factory Item.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return Item(
       index: map["index"],
       name: map["name"],
@@ -40,12 +38,12 @@ class Item {
   }
 
   Item copyWith({
-    int index,
-    String name,
-    String map,
-    String imag,
-    String tagline,
-    String desc,
+    int? index,
+    String? name,
+    String? map,
+    String? imag,
+    String? tagline,
+    String? desc,
   }) {
     return Item(
       index: index ?? this.index,
