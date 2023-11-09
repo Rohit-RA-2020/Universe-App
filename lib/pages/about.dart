@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:universe/models/fadeAnimation.dart';
+import 'package:universe/models/fade_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:fluttericon/font_awesome_icons.dart';
@@ -12,13 +12,15 @@ const _iurl = 'https://www.instagram.com/rohitranjan2';
 const _furl = 'https://flutter.dev/';
 
 class About extends StatelessWidget {
+  const About({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 1.5,
             colors: [
@@ -49,7 +51,7 @@ class About extends StatelessWidget {
                   fadeDirection: FadeDirection.right,
                   delay: 1,
                   child: Padding(
-                    padding: EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -60,18 +62,18 @@ class About extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () => {
-                            launch(_furl),
+                            launchUrl(Uri.parse(_furl)),
                           },
-                          child: FlutterLogo(size: 50),
+                          child: const FlutterLogo(size: 50),
                         ),
                       ],
                     ),
                   ),
                 ),
-                FadeAnimation(
+                const FadeAnimation(
                   fadeDirection: FadeDirection.right,
                   delay: 1,
-                  child: Container(
+                  child: SizedBox(
                     height: 300,
                     width: 300,
                     child: FlareActor(
@@ -98,16 +100,16 @@ class About extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(FontAwesome.linkedin, size: 30),
-                        onPressed: () => {launch(_lurl)},
+                        icon: const Icon(FontAwesome.linkedin, size: 30),
+                        onPressed: () => {launchUrl(Uri.parse(_lurl))},
                       ),
                       IconButton(
-                        icon: Icon(FontAwesome.twitter, size: 30),
-                        onPressed: () => {launch(_turl)},
+                        icon: const Icon(FontAwesome.twitter, size: 30),
+                        onPressed: () => {launchUrl(Uri.parse(_turl))},
                       ),
                       IconButton(
-                        icon: Icon(FontAwesome.instagram, size: 30),
-                        onPressed: () => {launch(_iurl)},
+                        icon: const Icon(FontAwesome.instagram, size: 30),
+                        onPressed: () => {launchUrl(Uri.parse(_iurl))},
                       )
                     ],
                   ),
@@ -120,16 +122,17 @@ class About extends StatelessWidget {
                     child: Container(
                       height: 60,
                       width: MediaQuery.of(context).size.width / 2,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.2),
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(15))),
                       child: TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text(
+                        child: const Text(
                           'Go Back',
                           textAlign: TextAlign.start,
                           style: TextStyle(

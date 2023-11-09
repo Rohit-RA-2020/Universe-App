@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:universe/models/fadeAnimation.dart';
+import 'package:universe/models/fade_animation.dart';
 import 'dart:convert';
-import 'package:universe/models/itemsModel.dart';
+import 'package:universe/models/items_model.dart';
 import 'package:universe/pages/about.dart';
-import 'package:universe/pages/celestialCard.dart';
+import 'package:universe/pages/celestial_card.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -17,7 +19,7 @@ class _HomeState extends State<Home> {
   int activeClassIndex = 0;
   int itemCount = 0;
 
-  List<Item> _data = <Item>[];
+  List<Item> data = <Item>[];
   List<Item> _dataForDisplay = <Item>[];
   bool _folded = true;
 
@@ -39,8 +41,8 @@ class _HomeState extends State<Home> {
   void initState() {
     parsePost().then((value) {
       setState(() {
-        _data.addAll(value);
-        _dataForDisplay = _data;
+        data.addAll(value);
+        _dataForDisplay = data;
       });
     });
     super.initState();
@@ -50,7 +52,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 1.5,
             colors: [
@@ -65,17 +67,17 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               Expanded(
                 child: ListView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 24,
                         vertical: 29,
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Icon(
+                          const Icon(
                             Icons.subject,
                             size: 35,
                             color: Colors.white,
@@ -116,7 +118,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    FadeAnimation(
+                    const FadeAnimation(
                       fadeDirection: FadeDirection.left,
                       delay: 2,
                       child: Padding(
@@ -144,7 +146,7 @@ class _HomeState extends State<Home> {
                       fadeDirection: FadeDirection.top,
                       delay: 2,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 24,
                         ),
                         child: Column(
@@ -158,7 +160,7 @@ class _HomeState extends State<Home> {
                                   color: Colors.white.withOpacity(0.4),
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 6),
+                            const SizedBox(height: 6),
                           ],
                         ),
                       ),
@@ -171,11 +173,11 @@ class _HomeState extends State<Home> {
                         fadeDirection: FadeDirection.top,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     _dataForDisplay.isNotEmpty
                         ? ListView.builder(
                             itemCount: _dataForDisplay.length,
-                            physics: ClampingScrollPhysics(),
+                            physics: const ClampingScrollPhysics(),
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return FadeAnimation(
@@ -191,9 +193,9 @@ class _HomeState extends State<Home> {
                               );
                             },
                           )
-                        : Center(
-                            child:
-                                Text('Adding this data soon 🤗 Stay Tunned')),
+                        : const Center(
+                            child: Text('Adding this data soon 🤗 Stay Tunned'),
+                          ),
                   ],
                 ),
               )
@@ -206,7 +208,7 @@ class _HomeState extends State<Home> {
 
   _animatedSearchBox() {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       width: _folded ? 100 : 56,
       height: 56,
       decoration: BoxDecoration(
@@ -218,13 +220,13 @@ class _HomeState extends State<Home> {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: !_folded
                   ? TextField(
                       onChanged: (text) {
                         text = text.toLowerCase();
                         setState(() {
-                          _dataForDisplay = _data.where((data) {
+                          _dataForDisplay = data.where((data) {
                             var dataTitle = data.name!.toLowerCase();
                             return dataTitle.contains(text);
                           }).toList();
@@ -239,19 +241,19 @@ class _HomeState extends State<Home> {
                         border: InputBorder.none,
                       ),
                     )
-                  : Text('Press the icon to Search'),
+                  : const Text('Press the icon to Search'),
             ),
           ),
           AnimatedContainer(
-            duration: Duration(microseconds: 400),
+            duration: const Duration(microseconds: 400),
             child: Material(
               type: MaterialType.transparency,
               child: InkWell(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(_folded ? 32 : 0),
-                  topRight: Radius.circular(32),
+                  topRight: const Radius.circular(32),
                   bottomLeft: Radius.circular(_folded ? 32 : 0),
-                  bottomRight: Radius.circular(32),
+                  bottomRight: const Radius.circular(32),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),

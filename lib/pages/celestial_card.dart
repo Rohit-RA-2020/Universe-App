@@ -1,8 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:universe/pages/detailPage.dart';
+import 'package:universe/pages/detail_page.dart';
 
 class CelestialCard extends StatefulWidget {
   final String? name;
@@ -47,17 +46,17 @@ class _CelestialCardState extends State<CelestialCard> {
           child: Container(
             height: 210,
             width: 356,
-            margin: EdgeInsets.only(bottom: 20),
+            margin: const EdgeInsets.only(bottom: 20),
             decoration: BoxDecoration(
                 color: Colors.pink,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.5),
-                    offset: Offset(5, 5),
+                    offset: const Offset(5, 5),
                     blurRadius: 7,
                   )
                 ],
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+                borderRadius: const BorderRadius.all(Radius.circular(20))),
             child: Stack(
               children: <Widget>[
                 Align(
@@ -67,12 +66,13 @@ class _CelestialCardState extends State<CelestialCard> {
                     width: 140,
                     decoration: BoxDecoration(
                       color: Colors.pink[100],
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                     ),
                     child: Stack(
                       children: <Widget>[
                         ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20)),
                           child: FlareActor(
                             widget.map,
                             animation: "solar_run",
@@ -81,7 +81,7 @@ class _CelestialCardState extends State<CelestialCard> {
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 35,
                               right: 3,
                               bottom: 3,
